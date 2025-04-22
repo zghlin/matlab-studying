@@ -1,0 +1,13 @@
+clc,clear,close all;
+[x,y]=meshgrid(-4:4);
+z=peaks(x,y);
+[x1,y1]=meshgrid(-4:0.25:4);
+z1=interp2(x,y,z,x1,y1,'nearest');
+subplot(131);
+surf(x1,y1,z1);
+z2=interp2(x,y,z,x1,y1,'linear');
+subplot(132);
+surf(x1,y1,z2);
+z3=interp2(x,y,z,x1,y1,'cubic');
+subplot(133);
+surf(x1,y1,z3);
